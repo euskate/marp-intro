@@ -27,7 +27,7 @@ jobs:
       - name: Generate index.html
         run: |
           echo "<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Slides Index</title></head><body><h1>📚 Slide List</h1><ul>" > dist/index.html
-          for file in dist/*.html; do
+          for file in ./*.html; do
             name=$(basename "$file")
             base="${name%.html}"
             [[ "$name" == "index.html" ]] && continue
