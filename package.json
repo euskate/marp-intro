@@ -3,7 +3,7 @@
   "scripts": {
     "build": "marp --input-dir slides --output dist --html --theme-set themes/*.css",
     "preview": "marp --server slides",
-    "pdf": "marp --input-dir slides --output dist --pdf --theme-set themes/*.css"
+    "pdf": "marp --input-dir slides --output pdf --pdf --theme-set themes/*.css"
   },
   "devDependencies": {
     "@marp-team/marp-cli": "^3.4.0"
