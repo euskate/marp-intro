@@ -118,3 +118,4 @@ marp slides.md --pptx
 ## 예시
 
 - [실제 수업 사용 예시](https://expandsource.github.io/tableau_2025/html/16_Histogram.html)
+- [PDF 다운로드 예시](https://www.notion.so/euskate/241bbdaf507680cd9fe4c23a8ad8cb05?source=copy_link)
