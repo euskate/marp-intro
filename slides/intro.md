@@ -113,3 +113,8 @@ marp slides.md --pdf
 # PPTX 출력 (Marp CLI 3.x 이상)
 marp slides.md --pptx
 ```
+
+---
+## 예시
+
+- [실제 수업 사용 예시](https://expandsource.github.io/tableau_2025/html/16_Histogram.html)

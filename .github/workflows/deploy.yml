@@ -27,8 +27,6 @@ jobs:
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        with:
-          node-version: 20
 
       - name: Install Dependencies
         run: npm install
@@ -36,13 +34,22 @@ jobs:
       - name: Build Slides
         run: npm run build
       
+      - name: Build PDF Slides
+        run: npm run pdf
+
       - name: Generate index.html
         run: |
           echo "<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Slides Index</title></head><body><h1>📚 Slide List</h1><ul>" > dist/index.html
           for file in dist/*.html; do
             name=$(basename "$file")
+            base="${name%.html}"
             [[ "$name" == "index.html" ]] && continue
-            echo "<li><a href='$name'>$name</a></li>" >> dist/index.html
+            # PDF 파일이 있으면 PDF 다운로드 링크도 추가
+            if [ -f "dist/$base.pdf" ]; then
+              echo "<li><a href='$name'>$name</a> - <a href='$base.pdf' download>PDF 다운로드</a></li>" >> dist/index.html
+            else
+              echo "<li><a href='$name'>$name</a></li>" >> dist/index.html
+            fi
           done
           echo "</ul></body></html>" >> dist/index.html
 
